@@ -30,8 +30,8 @@ public class ASDR implements Parser{
     private void Q(){
         match(TipoToken.SELECT);
         D();
-        //match(TipoToken.FROM);
-        //T();
+        match(TipoToken.FROM);
+        T();
     }
 
     // D -> distinct P | P
@@ -115,6 +115,32 @@ public class ASDR implements Parser{
             match(TipoToken.IDENTIFICADOR);
         }
     }
+    
+    // T -> T2T1
+    
+    private void T(){
+        if(hayErrores)
+            return;
+
+        T2();
+        T1();
+    }
+    
+    private void T1(){
+        if(hayErrores)
+            return;
+    }
+    
+    private void T2(){
+        if(hayErrores)
+            return;
+    }
+    
+    private void T3(){
+        if(hayErrores)
+            return;
+    }
+    
 
 
     private void match(TipoToken tt){
