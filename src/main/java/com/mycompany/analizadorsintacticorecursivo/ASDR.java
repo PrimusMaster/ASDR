@@ -129,6 +129,12 @@ public class ASDR implements Parser{
     private void T1(){
         if(hayErrores)
             return;
+        
+        if(preanalisis.tipo == TipoToken.COMA)
+        {
+            match(TipoToken.COMA);
+            T();
+        }
     }
     
     private void T2(){
