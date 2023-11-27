@@ -140,6 +140,18 @@ public class ASDR implements Parser{
     private void T2(){
         if(hayErrores)
             return;
+        
+        if(preanalisis.tipo == TipoToken.IDENTIFICADOR)
+        {
+            match(TipoToken.IDENTIFICADOR);
+            T3();
+        }
+        
+        else{
+            hayErrores = true;
+            System.out.println("Se esperaba un 'identificador'");
+        }
+        
     }
     
     private void T3(){
